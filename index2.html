@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Mapfitのマーカーサンプル</title>
+    <link href="https://cdn.mapfit.com/v2-4/assets/css/mapfit.css" rel="stylesheet" />
+  </head>
+  <body>
+        
+    <div id="mapfit" style="width: 100%; height: 400px;"></div>
+    
+    
+    
+    <script src="https://cdn.mapfit.com/v2-4/assets/js/tetragon.js"></script>
+    <script src="https://cdn.mapfit.com/v2-4/assets/js/mapfit.js"></script>
+    <script>
+    
+      mapfit.apikey = "【APIキー】";
+  
+      var map = mapfit.MapView('mapfit', {theme: 'day'});
+
+      //マーカーを設置する座標を指定する
+      var position = mapfit.LatLng([35.6811673, 139.7648629]);
+      
+      //座標を元にマーカーを作成する
+      var myMarker = mapfit.Marker(position1);
+
+      //設置したマーカーを画面中央に設定する
+      map.setCenter(position);
+      
+      //マップ上にマーカーを設置する
+      map.addMarker(myMarker);
+
+</script>
+  </body>
+</html>
