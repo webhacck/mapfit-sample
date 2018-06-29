@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Mapfitのイベントサンプル</title>
+    <link href="https://cdn.mapfit.com/v2-4/assets/css/mapfit.css" rel="stylesheet" />
+  </head>
+  <body>
+        
+    <div id="mapfit" style="width: 100%; height: 400px;"></div>
+    
+    
+    
+    <script src="https://cdn.mapfit.com/v2-4/assets/js/tetragon.js"></script>
+    <script src="https://cdn.mapfit.com/v2-4/assets/js/mapfit.js"></script>
+    <script>
+    
+      mapfit.apikey = "【APIキー】";
+  
+      var map = mapfit.MapView('mapfit', {theme: 'day'});
+
+      
+      //クリックイベント処理
+      map.on('click', function (e) {
+        
+        //イベントオブジェクト「e」から「latlng」プロパティを使って緯度・経度を取得してマーカーを作成する
+        var mark = mapfit.Marker(e.latlng);
+
+        //取得した緯度・経度を使ってマーカーをマップ上に設置する
+        map.addMarker(mark);
+      })
+    
+    </script>
+  </body>
+</html>
